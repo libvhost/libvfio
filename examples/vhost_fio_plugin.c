@@ -3,9 +3,6 @@
  *
  * this engine read/write vhost-user device.
  */
-#include "config-host.h"
-#undef CONFIG_SCHED_IDLE
-
 #include "fio.h"
 #include "optgroup.h"
 

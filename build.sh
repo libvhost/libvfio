@@ -5,5 +5,5 @@ type=${TYPE:-asan}
 [ $type = "rel" ] && type=RelWithDebInfo
 cmake -B build -GNinja -DCMAKE_BUILD_TYPE=$type -DCMAKE_INSTALL_PREFIX=build
 ninja -C build install -v
-cd build; cpack
+cd build; cpack3
 

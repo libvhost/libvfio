@@ -22,10 +22,12 @@ target_link_libraries(test_vhost PRIVATE obj_libvhost obj_allocator)
 INSTALL(TARGETS
     test_vhost
     DESTINATION bin
+    COMPONENT vhost
     )
 
 INSTALL(TARGETS
     obj_allocator
     obj_libvhost
     DESTINATION lib
+    COMPONENT vhost
     )
