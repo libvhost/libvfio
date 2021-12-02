@@ -188,7 +188,7 @@ static int vhost_conn_get_config(VhostConn *conn) {
   return 0;
 }
 
-int vhost_conn_get_blocksize(VhostConn *conn) { return conn->cfg.blk_size; }
+uint64_t vhost_conn_get_blocksize(VhostConn *conn) { return conn->cfg.blk_size; }
 
 int vhost_conn_get_numblocks(VhostConn *conn) {
   CHECK(conn->cfg.blk_size != 0);

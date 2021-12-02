@@ -27,5 +27,5 @@ int vhost_setup(VhostConn *conn);
 int vhost_conn_add_vq(VhostConn *conn, int size);
 // int vhost_conn_del_vq(VhostConn* conn);
 
-int vhost_conn_get_blocksize(VhostConn *conn);
+uint64_t vhost_conn_get_blocksize(VhostConn *conn);
 int vhost_conn_get_numblocks(VhostConn *conn);

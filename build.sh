@@ -3,6 +3,7 @@ type=${TYPE:-asan}
 [ $type = "asan" ] && type=asan
 [ $type = "ubsan" ] && type=UBSan
 [ $type = "rel" ] && type=RelWithDebInfo
+[ $type = "debug" ] && type=Debug
 cmake -B build -GNinja -DCMAKE_BUILD_TYPE=$type -DCMAKE_INSTALL_PREFIX=build
 ninja -C build install -v
 cd build; cpack3
