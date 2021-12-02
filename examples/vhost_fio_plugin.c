@@ -123,7 +123,7 @@ static int fio_vhost_setup(struct thread_data *td) {
     f->real_file_size =
         vhost_conn_get_blocksize(conn) * vhost_conn_get_numblocks(conn);
     destroy_vhost_conn(conn);
-    printf("pid: %d capacity: %" PRIu64 "\n", getpid(), f->real_file_size);
+    // printf("pid: %d capacity: %" PRIu64 "\n", getpid(), f->real_file_size);
   }
   return 0;
 }
@@ -155,8 +155,8 @@ static int fio_vhost_init_one(struct thread_data *td,
 
   f->real_file_size = fio_vhost->num_blocks * fio_vhost->block_size;
   f->engine_data = fio_vhost;
-  printf("pid: %d block size: %d num blocks: %" PRIu64 "\n", getpid(),
-         fio_vhost->block_size, fio_vhost->num_blocks);
+  // printf("pid: %d block size: %d num blocks: %" PRIu64 "\n", getpid(),
+  //        fio_vhost->block_size, fio_vhost->num_blocks);
   // memset(fio_vhost->device->qps[1]->sq.queue + 64, 0xfe, 64);
   INIT_FLIST_HEAD(&fio_vhost->tasks);
   for (i = 0; i < td->o.iodepth; ++i) {
