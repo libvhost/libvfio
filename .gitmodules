@@ -1,12 +1,6 @@
-[submodule "fio"]
-	path = fio
-	url = https://github.com/x2c3z4/fio
-[submodule "libiscsi"]
-	path = libiscsi
-	url = https://github.com/sahlberg/libiscsi
 [submodule "examples/libiscsi"]
 	path = examples/libiscsi
-	url = http://gerrit.smartx.com/libiscsi
+	url = https://github.com/x2c3z4/libiscsi
 [submodule "examples/fio"]
 	path = examples/fio
 	url = https://github.com/x2c3z4/fio
