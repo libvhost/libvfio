@@ -60,7 +60,7 @@ const char *level_names[] = {"D", "I", "W", "E", "F"};
 static char *basename(char const *path) {
   char *s = strrchr(path, '/');
   if (!s)
-    return path;
+    return (char *)path;
   else
     return s + 1;
 }
