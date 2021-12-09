@@ -35,6 +35,6 @@ add_dependencies(iscsi_fio_plugin fio-ext libiscsi_static)
 
 add_executable(fio fio.c)
 set(FIO_LIBRARY -Wl,--whole-archive vhost_fio_plugin iscsi_fio_plugin libiscsi_static fio_static obj_libvhost obj_allocator -Wl,--no-whole-archive gcrypt)
-target_link_libraries(fio PRIVATE ${FIO_LIBRARY} tcmalloc numa z m pthread dl aio ibverbs rdmacm curl ssl crypto pmem pmem)
+target_link_libraries(fio PRIVATE ${FIO_LIBRARY} tcmalloc numa z m pthread dl aio ibverbs rdmacm curl ssl crypto pmem)
 
 install(TARGETS fio DESTINATION bin COMPONENT fio)
