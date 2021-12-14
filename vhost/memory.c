@@ -57,6 +57,7 @@ static int hugepage_info_alloc(struct hugepage_info *info) {
     free(info->path);
     return -1;
   }
+  unlink(info->path);
   info->addr = (uint64_t)mmap(NULL, info->size, PROT_READ | PROT_WRITE,
                               MAP_SHARED, info->fd, 0);
   if (info->addr == (uint64_t)MAP_FAILED) {
