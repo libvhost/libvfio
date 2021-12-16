@@ -8,10 +8,10 @@ set(libvhost_SOURCES
     blk.c
     scsi.c
     vhost_user.c
-)
+    )
 file(GLOB liballocator_SOURCES
-allocator/*.c
-)
+    allocator/*.c
+    )
 include_directories(allocator/include)
 add_library(obj_allocator STATIC ${liballocator_SOURCES})
 add_library(obj_libvhost STATIC ${libvhost_SOURCES})

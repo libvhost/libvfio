@@ -1,5 +1,5 @@
-
 # TODO
+
 - [ ] 大页内存退出时不释放
 - [ ] virtio
     - [ ] indirect desc support
@@ -12,6 +12,6 @@
 - [ ] 支持 vhost-user-scsi
 - [ ] 支持后端重启后重连
 - [ ] vfio 的代码从 fio 仓库移动此仓库
-- [ ] 打包 fio 包含 vhost 的能力
+- [x] 打包 fio 包含 vhost 的能力
 - [ ] 重写内存分配器
 
