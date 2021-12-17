@@ -1,0 +1,27 @@
+name: ci
+on: [push, pull_request]
+
+env:
+  # Release, Debug, RelWithDebInfo, asan, UBSan
+  BUILD_TYPE: RelWithDebInfo
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Checkout submodules
+        uses: textbook/git-checkout-submodule-action@2.1.1
+
+      - name: Setup Build Environment
+        run: source /opt/rh/devtoolset-10/enable
+
+      - name: Configure CMake
+        run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}  -DCMAKE_INSTALL_PREFIX=build -DCMAKE_C_COMPILER=/opt/rh/devtoolset-10/root/usr/bin/gcc -DCMAKE_CXX_COMPILER=/opt/rh/devtoolset-10/root/usr/bin/g++
+
+      - name: Ninja Build
+        run: ninja -C build install -v
+
+      - name: Package
+        run: cpack --config build/CPackConfig.cmake

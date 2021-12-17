@@ -13,7 +13,8 @@ add_compile_definitions(FIO_STRSEP_LIB_H)
 include_directories(${CMAKE_SOURCE_DIR})
 ExternalProject_Add(fio-ext
     SOURCE_DIR ${FIO_SOURCE_DIR}
-    CONFIGURE_COMMAND make clean && ./configure --prefix=${CMAKE_BINARY_DIR}
+    CONFIGURE_COMMAND make clean &&
+    env -i CC=${CMAKE_C_COMPILER} CXX=${CMAKE_CXX_COMPILER} ./configure --prefix=${CMAKE_BINARY_DIR}
     BUILD_COMMAND make libfio -j ${N} V=1
     BUILD_IN_SOURCE 1
     INSTALL_COMMAND mv libfio_static.a ${CMAKE_CURRENT_BINARY_DIR}
